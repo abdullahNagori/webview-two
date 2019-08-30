@@ -18,14 +18,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val url = "https://sqrin.com/"
+        web_view.settings.javaScriptEnabled = true
+        val url = "http://www.aeoowa.org"
 
         web_view.webViewClient = object: WebViewClient(){
 
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
 
-                if (url!!.startsWith("https://sqrin.com/"))
+                if (url!!.startsWith("http://www.aeoowa.org"))
                 {
+
                     web_view.loadUrl(url)
                 }
                 else
